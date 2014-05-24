@@ -1,32 +1,29 @@
 <div style="background-color:#efefef; color:black;">
 <h1>Listing products</h1>
+<div  style="background-color:#fff; color:black; position:centre">
+<img  src="assets/lebo.jpg" />
+<div id="product-list">
+<h1>Listing products</h1>
+<table cellpadding="5" cellspacing="0">
+<% for product in @products %>
+<tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>">
+<td>
+<%= image_tag product.image_url, :class => 'list-image' %>
+</td>
+<td width="60%">
+<span class="list-title"><%=h product.title %></span><br />
 
-<table>
-  <tr>
-    <th style="align:left;">Title</th>
-    <th style="align:left;">Description</th>
-    <th style="align:left;">Image url</th>
-    <th style="align:left;">Price</th>
-    <th></th>
-    <th></th>
-  </tr>
+</td>
 
-<% @products.each do |product| %>
-  <tr style="align:left;">
-    <td style="align:left;"><span class="list-title"><%= product.title %></span></td>
-    <td style="align:left;"><%= product.description %></td>
-    <td style="align:left;"><%= product.image_url %></td>
-    <td style="align:left;"><%= product.price %></td>
-    <td style="align:left;"><%= link_to 'Show', product %></td>
-    <td style="align:left;"><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td style="align:left;"><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+</tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Product', new_product_path %>
+
 </div>
+
+
 
 

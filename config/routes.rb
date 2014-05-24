@@ -1,15 +1,21 @@
 Websites::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   resources :products
 
 
-  devise_for :admins
+  #devise_for :admins
+  ActiveAdmin.routes(self)
 
   devise_for :users
+  ActiveAdmin.routes(self)
+
   
   get "layouts/products"
-  match '/help', to: 'static_pages#help', via: 'get'
-  match '/about', to: 'static_pages#about', via: 'get'
-  match '/contact', to: 'static_pages#contact', via: 
+  
+  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -59,7 +65,7 @@ Websites::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'home#home'
+  # root :to => 'home#home'
 
   # See how all your routes lay out with "rake routes"
 

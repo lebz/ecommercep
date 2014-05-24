@@ -1,13 +1,59 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-<title>Products: <%= controller.action_name %></title>
-<%= stylesheet_link_tag 'scaffold' %>
-</head>
-<body>
-<p style="color: green"><%= flash[:notice] %></p>
-<%= yield %>
-</body>
-</html>
+<h1 style="color:#007393;">Circle Books</h1>
+<div  style="background-color:#fff; color:black; position:centre">
+<img  src="assets/lebo.jpg" />
+<header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+         
+          <nav>
+            <ul class="nav pull-right">
+              <li><%= link_to "home",    'products' %></li>
+              <li><%= link_to "admin",    'admin' %></li>
+              <li><%= link_to "users/sign_up", 'users/sign_up' %></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+
+
+
+
+
+<div id="product-list">
+
+
+
+
+
+<h2 style="color:#007393;">Listing products</h1>
+
+
+
+
+
+<table cellpadding="5" cellspacing="0">
+<% for product in @products %>
+<tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>">
+<td>
+<%= image_tag product.image_url, :class => 'list-image' %>
+</td>
+<td width="60%">
+<span class="list-title"><%=h product.title %></span><br />
+
+</td>
+
+<td width="60%">
+<span class="list-title">R<%=h product.price %></span><br />
+
+</td>
+
+</tr>
+<% end %>
+</table>
+
+<br />
+
+
+</div>
