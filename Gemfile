@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.0.0'
 gem 'rails', '3.2.16'
 
 # Bundle edge Rails instead:
@@ -12,7 +12,6 @@ end
 
 group:production do
 gem 'pg'
-gem 'rails_12factor'
 end
 
 # Gems used only for assets and not required
