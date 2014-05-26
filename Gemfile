@@ -4,7 +4,8 @@ gem 'rails', '3.2.16'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'activeadmin'
+gem 'devise'
 gem 'heroku'
 group:development do
 gem 'sqlite3'
@@ -18,11 +19,11 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'activeadmin'
+  
   gem "sass", "~> 3.2.5"
 gem 'sass-rails'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'devise'
+  
   
  
 
